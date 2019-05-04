@@ -610,6 +610,23 @@ end;
 
 
 
+--***********************************************************************************
+--                                                                                  *
+--                  Copyright (C) 2014 Altera Corporation                           *
+--                                                                                  *
+-- ALTERA, ARRIA, CYCLONE, HARDCOPY, MAX, MEGACORE, NIOS, QUARTUS & STRATIX         *
+-- are Reg. U.S. Pat. & Tm. Off. and Altera marks in and outside the U.S.           *
+--                                                                                  *
+-- All information provided herein is provided on an "as is" basis,                 *
+-- without warranty of any kind.                                                    *
+--                                                                                  *
+-- Module Name: seven_segment_cntrl         File Name: seven_segment_cntrl.vhd      *
+--                                                                                  *
+-- Module Function: This file implements control logic for the 7-segment display    *
+--                                                                                  *
+-- REVISION HISTORY:                                                                *
+--***********************************************************************************
+
 -- Insert library and use clauses
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -643,11 +660,11 @@ BEGIN
 		--  logic 1 should up the segment
 		CASE input IS
 			WHEN  "0000" =>  -- 7-segment display reads '0' when input equals "0000"
-			  seven_seg <= "1000000"; 
+			  seven_seg <= "1111110"; 
 			WHEN  "0001" =>  -- 7-segment display reads '1' when input equals "0001"
-			  seven_seg <= "0000001"; 
+			  seven_seg <= "0110000"; 
 			WHEN  "0010" =>  -- 7-segment display reads '2' when input equals "0010"
-			  seven_seg <= "0001000"; 
+			  seven_seg <= "1101101"; 
 			WHEN  "0011" =>  -- 7-segment display reads '3' when input equals "0011"
 			  seven_seg <= "1111001"; 
 			WHEN  "0100" =>  -- 7-segment display reads '4' when input equals "0100"
@@ -675,7 +692,7 @@ END ARCHITECTURE logic;
 
 
 
-
+--gen counter code provided by course instructor
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
